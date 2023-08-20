@@ -10,6 +10,8 @@ class Program
         InstallPowershell();
         InstallPlaywright();
 
+        System.Environment.SetEnvironmentVariable("MOZ_REMOTE_SETTINGS_DEVTOOLS", "1");
+
         using var playwright = await Playwright.CreateAsync();
         await using var browser = await playwright.Firefox.LaunchAsync(new() { Headless = true });
         var page = await browser.NewPageAsync();
