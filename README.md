@@ -1,8 +1,10 @@
 # Playwright on Windows Server Core 2022 - Firefox
 
 This repo has several branches to demonstate issues with running on Windows Server Core containers.
+This branch is a minimal repo to demonstrate the issues with firefox.
 
-This branch is a minimal repo to demonstrate the issue with firefox.
+## Main issue
+
 
 With docker for windows installed and running windows containers, run `buildandrun.cmd`.
 
@@ -37,8 +39,6 @@ Unhandled exception. Microsoft.Playwright.PlaywrightException: Protocol error (B
 <launching> C:\Users\ContainerAdministrator\AppData\Local\ms-playwright\firefox-1422\firefox\firefox.exe -no-remote -headless -profile C:\Users\ContainerAdministrator\AppData\Local\Temp\playwright_firefoxdev_profile-fadQhb -juggler-pipe -silent
 <launched> pid=2352
 [pid=2352][err] *** You are running in headless mode.
-[pid=2352][out] console.warn: services.settings: Ignoring preference override of remote settings server
-[pid=2352][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 [pid=2352][out] console.error: ({})
 [pid=2352][out]
 [pid=2352][out] Juggler listening to the pipe
@@ -59,8 +59,15 @@ Unhandled exception. Microsoft.Playwright.PlaywrightException: Protocol error (B
 ```
 Here we see the error(s) occurring with launching the new page in the browser.
 
-There is a seperate issue here (also shown) regarding the remote settings...
-This can be fixed (seen in the fix-remote-settings branch) by adding
+
+## Secondary issue
+
+In the original log, there is an error
+```batch
+[pid=2352][out] console.warn: services.settings: Ignoring preference override of remote settings server
+[pid=2352][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+```
+This branch shows the 'fix' for this, by setting the environment variable before launching firefox.
 ```cs
         System.Environment.SetEnvironmentVariable("MOZ_REMOTE_SETTINGS_DEVTOOLS", "1");
 ```
