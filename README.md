@@ -1,6 +1,8 @@
-# PlaywrightFirefoxServerCore2022
-Minimal repo to demonstrate issue with firefox on windows core.
+# PlaywrightWindowsServerCore2022
 
+This repo has several branches to demonstate issues with running on Windows Server Core containers.
+
+This branch is a minimal repo to demonstrate the issue with firefox.
 
 With docker for windows installed and running windows containers, run `buildandrun.cmd`.
 
