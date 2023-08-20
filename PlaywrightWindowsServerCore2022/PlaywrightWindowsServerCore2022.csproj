@@ -8,10 +8,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ContainerRepository>playwrightwindowsservercore2022</ContainerRepository>
-    <ContainerImageTag>firefox</ContainerImageTag>
+    <ContainerImageTag>chromium</ContainerImageTag>
     <ContainerBaseImage>mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2022</ContainerBaseImage>
     <ContainerRuntimeIdentifier>win-x64</ContainerRuntimeIdentifier>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="installfonts.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="installfonts.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.400" />
     <PackageReference Include="Microsoft.Playwright" Version="1.37.1" />
