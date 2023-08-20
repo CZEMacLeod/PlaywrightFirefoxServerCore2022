@@ -13,8 +13,8 @@ class Program
         using var playwright = await Playwright.CreateAsync();
         await using var browser = await playwright.Firefox.LaunchAsync(new() { Headless = true });
         var page = await browser.NewPageAsync();
-        await page.GotoAsync("https://playwright.dev/dotnet");
-        await page.ScreenshotAsync(new() { Path = "screenshot.png" });
+        //await page.GotoAsync("https://playwright.dev/dotnet");
+        //await page.ScreenshotAsync(new() { Path = "screenshot.png" });
     }
 
     private static void InstallPlaywright()
