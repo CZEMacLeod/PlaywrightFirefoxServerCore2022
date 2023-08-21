@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup>
-    <ContainerImageName>playwrightwindowsservercore2022</ContainerImageName>
+    <ContainerRepository>playwrightwindowsservercore2022</ContainerRepository>
     <ContainerImageTag>firefox</ContainerImageTag>
     <ContainerBaseImage>mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2022</ContainerBaseImage>
     <ContainerRuntimeIdentifier>win-x64</ContainerRuntimeIdentifier>
