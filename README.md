@@ -1,4 +1,4 @@
-# PlaywrightWindowsServerCore2022
+# Playwright on Windows Server Core 2022 - Firefox
 
 This repo has several branches to demonstate issues with running on Windows Server Core containers.
 
@@ -53,9 +53,9 @@ Unhandled exception. Microsoft.Playwright.PlaywrightException: Protocol error (B
 --- End of stack trace from previous location ---
    at Microsoft.Playwright.Transport.Connection.WrapApiCallAsync[T](Func`1 action, Boolean isInternal) in /_/src/Playwright/Transport/Connection.cs:line 515
    at Microsoft.Playwright.Core.Browser.NewPageAsync(BrowserNewPageOptions options) in /_/src/Playwright/Core/Browser.cs:line 178
-   at PlaywrightFirefoxServerCore2022.Program.Main() in \PlaywrightFirefoxServerCore2022\PlaywrightFirefoxServerCore2022\Program.cs:line 15
-   at PlaywrightFirefoxServerCore2022.Program.Main() in \PlaywrightFirefoxServerCore2022\PlaywrightFirefoxServerCore2022\Program.cs:line 15
-   at PlaywrightFirefoxServerCore2022.Program.<Main>()
+   at PlaywrightWindowsServerCore2022.Program.Main() in \PlaywrightWindowsServerCore2022\Program.cs:line 15
+   at PlaywrightWindowsServerCore2022.Program.Main() in \PlaywrightWindowsServerCore2022\Program.cs:line 15
+   at PlaywrightWindowsServerCore2022.Program.<Main>()
 ```
 Here we see the error(s) occurring with launching the new page in the browser.
 

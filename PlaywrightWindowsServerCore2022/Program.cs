@@ -1,7 +1,7 @@
 ﻿using Microsoft.Playwright;
 using System.Diagnostics;
 
-namespace PlaywrightFirefoxServerCore2022;
+namespace PlaywrightWindowsServerCore2022;
 
 class Program
 {
@@ -21,7 +21,7 @@ class Program
     {
         System.Diagnostics.Process p = new System.Diagnostics.Process();
         p.StartInfo.FileName = "pwsh.exe";
-        p.StartInfo.Arguments = "playwright.ps1 install firefox";
+        p.StartInfo.Arguments = "playwright.ps1 install --with-deps firefox";
         p.Start();
         p.WaitForExit();
     }
